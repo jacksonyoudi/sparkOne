@@ -45,7 +45,7 @@ object Demo {
      * minPartitions).map(pair => pair._2.toString).setName(path)
      * }
      *
-     * 使用 hadoop 文件分区的概念
+     * 使用 hadoop 文件分区的概念  最小分区数 取决于hadoop的分区规则
      * def defaultMinPartitions: Int = math.min(defaultParallelism, 2)
      */
     val fileRdd: RDD[String] = sc.textFile("/Users/youdi/Project/javaProject/sparkOne/input")
