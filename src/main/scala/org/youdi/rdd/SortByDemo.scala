@@ -32,5 +32,22 @@ object SortByDemo {
 
     val rdd: RDD[(String, Int)] = sc.makeRDD(List(("a", 1), ("a", 2), ("c", 3), ("b", 4), ("c", 2), ("b", 5)))
     rdd.aggregateByKey(0)(math.max(_, _), _ + _) // 分区内取最大值， 分区间相加
+    //    rdd.foldByKey() 底层和aggregateByKey 分区内核分区间  算法相同
+
+    // combineByKey
+    /*
+        combineByKeyWithClassTag[U]((v: V) =>
+        cleanedSeqOp(createZero(), v),  分区内 (初始值，value)
+      cleanedSeqOp, 分区内
+       combOp, 分区间
+        partitioner)
+     */
+    // combineByKeyWithClassTag(createCombiner, mergeValue, mergeCombiners)(null)
+    rdd.combineByKey(
+      (_, 1),
+      (acc: (Int, Int), v) => (acc._1 + v, acc._2 + 1),
+      (acc1: (Int, Int), acc2: (Int, Int)) => (acc1._1 + acc2._1, acc1._2 + acc2._2)
+    )
+
   }
 }
