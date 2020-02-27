@@ -49,5 +49,12 @@ object SortByDemo {
       (acc1: (Int, Int), acc2: (Int, Int)) => (acc1._1 + acc2._1, acc1._2 + acc2._2)
     )
 
+    // sortByKey(ascending: Boolean = true, numPartitions: Int = self.partitions.length)
+//    rdd.sortByKey()
+
+// mapValues() 只对value操作
+    // join 可以相同 性能比较低
+    // cogroup  类似left join
+
   }
 }
