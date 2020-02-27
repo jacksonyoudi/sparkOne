@@ -28,9 +28,9 @@ object SortByDemo {
     var sc: SparkContext = new SparkContext(conf)
 
     val keyRDD: RDD[(Int, String)] = sc.makeRDD(List((1, "a"), (2, "b")))
-    keyRDD.aggregateByKey()
+//    keyRDD.aggregateByKey()
 
-    val rdd: RDD[(String, Int)] = sc.makeRDD(List(("a", 1), ("a", 2), ("c", 3), ("b", 4), ("c", 2), ("b", 5)))
+    /*val rdd: RDD[(String, Int)] = sc.makeRDD(List(("a", 1), ("a", 2), ("c", 3), ("b", 4), ("c", 2), ("b", 5)))
     rdd.aggregateByKey(0)(math.max(_, _), _ + _) // 分区内取最大值， 分区间相加
     //    rdd.foldByKey() 底层和aggregateByKey 分区内核分区间  算法相同
 
@@ -55,6 +55,6 @@ object SortByDemo {
 // mapValues() 只对value操作
     // join 可以相同 性能比较低
     // cogroup  类似left join
-
+*/
   }
 }
