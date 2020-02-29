@@ -25,7 +25,7 @@ object MyAccumite {
       }
     }
 
-    println(wac.value.toString{})
+    println(wac.value.toString)
 
     sc.stop()
 
