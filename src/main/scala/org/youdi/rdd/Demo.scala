@@ -5,9 +5,15 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 /**
  * RDD的创建
+ * 弹性分布式数据集
+ *
  * 1. 从集合中创建
  * 2. 从外部存储中
  * 3. 其他RDD转换的
+ *
+ *
+ * 广播变量： 分布式只读共享变量
+ * 累加器: 分布式只写共享变量
  */
 
 object Demo {
