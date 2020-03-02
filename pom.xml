@@ -125,6 +125,12 @@
             <version>${spark.version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming_2.12</artifactId>
+            <version>${spark.version}</version>
+        </dependency>
+
         <!-- 导入spark sql的依赖 -->
         <!--        <dependency>-->
         <!--            <groupId>org.apache.spark</groupId>-->
@@ -140,11 +146,6 @@
 
         <!-- spark Streaming 的依赖-->
         <!--start-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.spark</groupId>-->
-        <!--            <artifactId>spark-streaming_2.11</artifactId>-->
-        <!--            <version>${spark.version}</version>-->
-        <!--        </dependency>-->
         <!--spark 跟kafka 整合的依赖-->
         <!--        <dependency>-->
         <!--            <groupId>org.apache.spark</groupId>-->
