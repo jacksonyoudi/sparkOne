@@ -28,9 +28,5 @@ object Write {
     //    jdbcDf.write.mode("append").jdbc("
     jdbcDf.createTempView("tt")
 
-
-    spark.
-
-      spark.stop()
   }
 }
