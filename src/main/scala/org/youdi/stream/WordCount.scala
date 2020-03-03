@@ -25,7 +25,12 @@ object WordCount {
     wordSumDstream.print()
 
     // 不能停止采集程序
-//    streamContext
+    //    streamContext
+    //    streamContext.stop(true, true)
 
+    // 启动采集器
+    streamContext.start()
+    // driver等待采集器停止
+    streamContext.awaitTermination()
   }
 }
