@@ -147,22 +147,30 @@
         <!-- spark Streaming 的依赖-->
         <!--start-->
         <!--spark 跟kafka 整合的依赖-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.spark</groupId>-->
-        <!--            <artifactId>spark-streaming-kafka-0-10_2.11</artifactId>-->
-        <!--            <version>${spark.version}</version>-->
-        <!--        </dependency>-->
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka-0-10 -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka-0-10_2.12</artifactId>
+            <version>2.4.3</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.spark/spark-streaming-kafka -->
+        <dependency>
+            <groupId>org.apache.spark</groupId>
+            <artifactId>spark-streaming-kafka_2.11</artifactId>
+            <version>1.6.3</version>
+        </dependency>
+
         <!--        &lt;!&ndash;kafka客户端依赖&ndash;&gt;-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.kafka</groupId>-->
-        <!--            <artifactId>kafka-clients</artifactId>-->
-        <!--            <version>${kafka-clients.version}</version>-->
-        <!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.apache.kafka</groupId>-->
-        <!--            <artifactId>kafka-streams</artifactId>-->
-        <!--            <version>${kafka-streams.version}</version>-->
-        <!--        </dependency>-->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-clients</artifactId>
+            <version>${kafka-clients.version}</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.kafka</groupId>-->
+<!--            <artifactId>kafka-streams</artifactId>-->
+<!--            <version>${kafka-streams.version}</version>-->
+<!--        </dependency>-->
         <!--end-->
 
         <!--spark整合hive-->
