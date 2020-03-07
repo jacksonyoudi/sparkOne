@@ -2,6 +2,7 @@ package org.youdi.source
 
 import org.apache.spark.deploy.SparkSubmit
 import org.apache.spark.deploy.yarn.YarnClusterApplication
+import org.apache.spark.executor.CoarseGrainedExecutorBackend
 
 /**
  * 1. SparkSubmit
@@ -45,10 +46,59 @@ import org.apache.spark.deploy.yarn.YarnClusterApplication
  *          yarnClient.submitApplication(appContext)
  *
  *
+
+ *
  *
  */
+
+
+/**
+ * ApplicationMaster
+ *    -- main
+ *    -- new ApplicationMasterArguments(args)
+ *    -- new ApplicationMaster
+ *    -- master.run
+ *       cluster
+ *        runDriver
+ *          // 启动用户的应用
+ *          -- startUserApplication
+ *
+ *          // 获取用户应用的类的main方法
+ *          -- userClassLoader.loadClass(args.userClass).getMethod("main",classOf[Array[String]))
+ *
+ *          // 启动driver线程，调用用户的main方法
+ *          -- new Thread.start().setName("driver")
+ *
+ *          // 注册AM
+ *          registerAM
+ *              // 获取yarn资源
+ *              -- client.register(host, port, yarnConf, _sparkConf, uiAddress, historyAddress)
+ *
+ *              // 分配资源
+ *              -- allocator.allocateResources()
+ *              -- handleAllocatedContainers()
+ *                -- runAllocatedContainers()
+ *                    -- new ExecutorRunnable().run()  --> NM
+ *                      -- startContainer
+ *                         -- prepareCommand
+ *                              org.apache.spark.executor.CoarseGrainedExecutorBackend
+ *
+ *
+ *
+ * * 3. Excuter
+ * *    CoarseGrainedExecutorBackend
+ *      -- main
+ *         -- onstart
+ *            -- ref.ask[Boolean](RegisterExecutor)
+ *         -- receive
+ *            -- case RegisteredExecutor
+ *               -- new Executor
+ *
+ *
+ */
+
+
 object Demo {
   def main(args: Array[String]): Unit = {
-    SparkSubmit.main()
   }
 }
