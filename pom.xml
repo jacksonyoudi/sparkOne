@@ -173,11 +173,20 @@
             <artifactId>kafka-clients</artifactId>
             <version>${kafka-clients.version}</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.apache.kafka</groupId>-->
-<!--            <artifactId>kafka-streams</artifactId>-->
-<!--            <version>${kafka-streams.version}</version>-->
-<!--        </dependency>-->
+
+        <!-- https://mvnrepository.com/artifact/com.github.mitallast/scala-nsq -->
+        <dependency>
+            <groupId>com.github.mitallast</groupId>
+            <artifactId>scala-nsq_2.11</artifactId>
+            <version>1.11</version>
+        </dependency>
+
+
+        <!--        <dependency>-->
+        <!--            <groupId>org.apache.kafka</groupId>-->
+        <!--            <artifactId>kafka-streams</artifactId>-->
+        <!--            <version>${kafka-streams.version}</version>-->
+        <!--        </dependency>-->
         <!--end-->
 
         <!--spark整合hive-->
