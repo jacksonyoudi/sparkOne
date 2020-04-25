@@ -83,8 +83,6 @@ object Wd {
 
     val array: Array[(String, Int)] = wordSum.collect()
     array.foreach(println)
-
-
   }
 
 }

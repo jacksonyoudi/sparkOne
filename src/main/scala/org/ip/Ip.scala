@@ -14,7 +14,7 @@ import scala.collection.mutable.ArrayBuffer
 /**
  * 使用静态方法和静态属性
  */
-object IP extends Serializable {
+object IP extends Serialiszable {
 
   val ipDB = new City("db/ipdata.ipdb")
   val file: File = new File("db/GeoLite2-City.mmdb")
